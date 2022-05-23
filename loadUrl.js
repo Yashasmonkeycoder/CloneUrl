@@ -3,7 +3,7 @@ CloneUrl plugin to clone any website including it's files into your webpage for 
 *made by Yashas Slk - MultiMentality
 *original file loadUrl.js
 */
-var loadUrl = { clone: function(lik){var link = lik;if(link[(link.length)-1]=="/"){link+=""} var link2 = link.split("/");var maint = "";
+var loadUrl = { clone: function(lik){var link = lik;if(link[(link.length)-1]!="/"){link+="/"} var link2 = link.split("/");var maint = "";
 function urlEn(text){ var lk = link2[0]+"/"+link2[1]+"/"+link2[2]+"/"; if(text.indexOf("./")==0){ var k=""; for(let y=0;y<link2.length-1;y++){ k+=link2[y]+"/";} return k+text.replace("./","");} else if(text.indexOf("../")==0){var count=0;var textt = text.split("/");var jk = ""; for(let y=0;y<textt.length;y++){ if(textt[y]==".."){ count++;}} for(let o=3;o<(link2.length-1)-count;o++){ jk+=link2[o]+"/";} return lk+jk+text.replaceAll("../","");} else if(text.indexOf("/")==0){ return lk+text.replace("/","");} else if(text.indexOf(":")>1){ return text;} else if(text.indexOf("#")==0){ return text;} else{ var t = ""; for(let y=0;y<link2.length-1;y++){ t+=link2[y]+"/";} return t+text;}}
 function srch_appl(str,searchStr){var lastMatch;result = [];if ((lastMatch = str.indexOf(searchStr)) >= 0) {result.push(lastMatch);while ((lastMatch = str.indexOf(searchStr, lastMatch + searchStr.length)) >= 0) {result.push(lastMatch);}} return result;}
 function readTextFilehu789h(file){ var rawFile = new XMLHttpRequest();rawFile.open("GET", file, false);rawFile.onreadystatechange = function (){ if(rawFile.readyState === 4){ if(rawFile.status === 200 || rawFile.status == 0){ var allText = rawFile.responseText; maint = allText;}}} 
